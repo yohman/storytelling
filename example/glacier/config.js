@@ -1,7 +1,8 @@
 var config = {
     style: 'mapbox://styles/branigan/cjz37rcb003ib1cr3s8rnkt2d',
+    // style: 'mapbox://styles/yohman/cjka8xrk81agr2rmd64iskbuf',
     accessToken: 'pk.eyJ1IjoibWJ4c29sdXRpb25zIiwiYSI6ImNrMm01aG9hdTBlZGwzbXQ1ZXVrNHNmejAifQ.QHQA0N6XPWddCXtvoODHZg',
-    showMarkers: false,
+    showMarkers: true,
     theme: 'dark',
     use3dTerrain: true,
     title: 'Glaciers of Glacier National Park',
@@ -9,6 +10,29 @@ var config = {
     byline: '',
     footer: 'Source: Story text from Wikipedia, August 2019. Data from <a href="https://www.usgs.gov/centers/norock/science/retreat-glaciers-glacier-national-park">USGS</a>',
     chapters: [
+        {
+            id: 'yoh-1',
+            alignment: 'full',
+            title: 'Glacier National Park Glaciers',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/2015-06-19_Glacier_National_Park_%28U.S.%29_8633.jpg/800px-2015-06-19_Glacier_National_Park_%28U.S.%29_8633.jpg',
+            description: 'Glacier National Park is dominated by mountains which were carved into their present shapes by the huge glaciers of the last ice age. These glaciers have largely disappeared over the last 12,000 years. Evidence of widespread glacial action is found throughout the park in the form of U-shaped valleys, cirques, arêtes, and large outflow lakes radiating like fingers from the base of the highest peaks. Since the end of the ice ages, various warming and cooling trends have occurred. The last recent cooling trend was during the Little Ice Age, which took place approximately between 1550 and 1850. During the Little Ice Age, the glaciers in the park expanded and advanced, although to nowhere near as great an extent as they had during the Ice Age.',
+            location: {
+                center: [-113.91666, 48.66451],
+                zoom: 0,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'yohman.bbij85pc',
+                    opacity: 1
+                },
+                {
+                    layer: 'africa4-1489f1',
+                    opacity: 1
+                },
+            ],
+        },
         {
             id: 'glacier-np',
             alignment: 'full',
@@ -23,12 +47,16 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'africa4-1489f1',
+                    opacity: 1
+                },
+                {
                     layer: 'gnpglaciers-1998',
-                    opacity: 0.25
+                    opacity: 1
                 },
                 {
                     layer: 'glaciernp-boundary',
-                    opacity: 0.25
+                    opacity: 1
                 }
             ],
             onChapterExit: [
